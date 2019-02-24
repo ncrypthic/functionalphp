@@ -1,25 +1,21 @@
-Functional PHP
-==============
+# Functional PHP
 
-Installation
-------------
+## Installation
 
 ```
 $ composer require ncrypthic/functionalphp
 ```
 
-Usage
------
+## Usage
 
 1. Monads
-  1.1 [Option](Option)
-  1.2 [Execute](Execute)
-  1.3 [Match](Match)
+    1. [Option](#option)
+    2. [Execute](#execute)
+    3. [Match](#match)
 
-Option
-------
+## Option
 
-```
+```php
 <?php
 use LLA\Functional\Maybe;
 use LLA\Functional\Some;
@@ -35,10 +31,27 @@ $maybeNull = Maybe($val)->match()
   ->val();
 ```
 
-Execute
--------
+## Execute
 
+```php
+<?php
+use LLA\Functional\Execute;
+use LLA\Functional\Success;
+use LLA\Functional\Failure;
+
+// ...
+// $callable = <someValue>
+$tryExecute = Execute($callable)->match()
+  ->case(Success(1), function($val) {
+  })
+  ->case(Failure(), function($val) {
+  })
+  ->val();
 ```
+
+## Match
+
+```php
 <?php
 use LLA\Functional\Execute;
 use LLA\Functional\Success;
