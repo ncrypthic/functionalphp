@@ -1,0 +1,26 @@
+{
+    "name": "ncrypthic/functionalphp",
+    "description": "Functional php primitives",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lim Afriyadi",
+            "email": "lim.afriyadi.id@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/index.php"
+        ],
+        "psr-4": {
+            "LLA\\Functional\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "behat/behat": "^3.5",
+        "phpunit/phpunit": "^8.0"
+    }
+}
